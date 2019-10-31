@@ -35,7 +35,7 @@ get_header();
                     $arr = explode(" ", $str);
 ?>
 
-<div class="scroll-list">
+<div class="scroll-list" id="allDomains">
 <?php
                     $brokenArr = [];
                     $worksArr = [];
@@ -44,6 +44,7 @@ get_header();
 
                         $handle = curl_init($value);
                         curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+                        curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
 
                         /* Get the HTML or whatever is linked in $url. */
                         $response = curl_exec($handle);
@@ -61,7 +62,9 @@ get_header();
                     }
 
                     ?>
+                    
 </div>
+<button id="button1" onclick="CopyToClipboard('allDomains')">Click to copy</button>
 
 
 
@@ -103,5 +106,7 @@ get_header();
     </section>
 
 <?php
+
+
 
 get_footer();

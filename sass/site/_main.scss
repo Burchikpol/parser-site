@@ -18,6 +18,9 @@ body {
 #primary-menu {
     display: none;
 }
+#site-navigation {
+    display: none;
+}
 .site-description {
     margin-bottom: 50px;
 }
@@ -47,6 +50,9 @@ body {
     font-size: 20px;
     cursor: pointer;
     border-radius: 0 10px 10px 0;
+    &:hover {
+        border-color: #000!important;
+    }
     
     
     
