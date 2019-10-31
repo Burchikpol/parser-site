@@ -1,5 +1,17 @@
-body,html{height:100%;width:100%;overflow-x:hidden}
-.preloader{margin:0;background:#F6B361; height: 100vh; width: 100vw;}
+.preloader {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 999;
+}
+#preloader {
+    display: none;
+}
+body,html{}
+.preloader{margin:0;background:rgba(246,179,97, 0.5); height: 100vh; width: 100vw;}
 .loader{height:100%;width:100%}
 .loader .l_main{position:absolute;top:50%;left:50%;width:172px;height:128px;margin:0;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 @media (max-width:550px){.loader{-webkit-transform:scale(0.75);transform:scale(0.75)}}

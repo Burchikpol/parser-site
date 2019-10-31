@@ -1,0 +1,78 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+body {
+    font-family: 'Staatliches', cursive;
+}
+
+/*Header*/
+
+.site-branding {
+    display: flex;;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.site-content {
+    min-height: 70vh;
+}
+#primary-menu {
+    display: none;
+}
+.site-description {
+    margin-bottom: 50px;
+}
+.site-info {
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+}
+.site-info:before {
+    content: 'Copyright 2019 - Powered by Best Pixel Guys';
+    font-size: 14px;
+    
+}
+.form {
+    display: flex;
+   
+    margin-bottom: 25px;
+    &input {
+       
+    }
+}
+.form-button {
+    background: #F6B361;
+    outline: none;
+    border-color: #F6B361;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    
+    
+    
+    &:hover {
+        background-color: #000;
+        color: #F6B361;
+        border-color: #ccc;
+        transition: background-color ease-in-out .4s, border-color ease-in-out .4s, color ease-in-out .4s;
+    }
+}
+
+input[type=text] {
+    color: #000;
+    border-color: #F6B361;
+    padding: 10px;
+    outline: none;
+    width: 100%; 
+    border-radius: 10px 0 0 10px;
+}
+.input[type=text]:placeholder {
+    color: #000;
+}
+.scroll-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+hr {
+    background-color: #F6B361;
+}

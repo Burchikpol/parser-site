@@ -1,4 +1,3 @@
-window.onload = function () {
-    let preloader = document.getElementById('preloader');
-    preloader.style.display = 'none';
-}
+$("#start-btn").click(function() {
+    $("#preloader").css('display', 'block');
+});

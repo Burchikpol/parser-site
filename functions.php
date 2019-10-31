@@ -121,8 +121,13 @@ add_action( 'widgets_init', 'parser_widgets_init' );
  */
 function parser_scripts() {
 	wp_enqueue_style( 'parser-style', get_stylesheet_uri() );
+
     wp_enqueue_style( 'bootstrap-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), '4.3.1' );
     wp_enqueue_style( 'preloader-style',get_template_directory_uri() . '/sass/preloader.css', array(), '4.3.1' );
+	wp_enqueue_style( 'main-styles', get_template_directory_uri() . '/sass/style.css', array(), '1' );
+	
+	
+
 
     wp_enqueue_script( 'popper-js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array( 'jquery' ), '1.14.7', true );
     wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array( 'jquery' ), '4.3.1', true );
@@ -136,6 +141,16 @@ function parser_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'parser_scripts' );
+
+
+function my_scripts_method() {
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.4.1.min.js');
+    wp_enqueue_script( 'jquery' );
+}
+
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
 
 /**
  * Implement the Custom Header feature.
