@@ -78,6 +78,14 @@ input[type=text] {
 .scroll-list {
     max-height: 500px;
     overflow-y: auto;
+    &__broken {
+        a {
+            color: #8B0000;
+        } 
+    }
+    &__works {
+        color: 	#006400;
+    }
 }
 hr {
     background-color: #F6B361;

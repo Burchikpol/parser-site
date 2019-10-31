@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -14,28 +15,28 @@
 
 get_header();
 ?>
-    <section class="main">
-        <div class="container">
+<section class="main">
+    <div class="container">
         <form name="form" action="" method="get" class="form">
-                        <input type="text" name="subject" id="subject" placeholder="Enter domains here">
-                        <button class="form-button">Start</button>
-                    </form>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Domains List:</h2>
-                    <hr>
+            <input type="text" name="subject" id="subject" placeholder="Enter domains here">
+            <button class="form-button">Start</button>
+        </form>
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Domains List:</h2>
+                <hr>
 
 
+                <?php
+
+                $str = $_GET['subject'];;
+
+                // Function to convert string to array
+                $arr = explode(" ", $str);
+                ?>
+
+                <div class="scroll-list" id="allDomains">
                     <?php
-
-                    $str = $_GET['subject'];;
-
-                    // Function to convert string to array
-                    $arr = explode(" ", $str);
-?>
-
-<div class="scroll-list" id="allDomains">
-<?php
                     $brokenArr = [];
                     $worksArr = [];
 
@@ -50,7 +51,7 @@ get_header();
 
                         /* Check for 404 (file not found). */
                         $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-                        if($httpCode == 200) {
+                        if ($httpCode == 200) {
                             echo $value . '<br>';
                             array_push($worksArr, $value);
                         } else {
@@ -62,48 +63,49 @@ get_header();
                     }
 
                     ?>
-                    
-</div>
-<button id="button1" onclick="CopyToClipboard('allDomains')">Click to copy</button>
-
-
 
                 </div>
 
-                <div class="col-lg-3">
-                    <h2>Broken Domains:</h2>
-                    <hr>
-                    <div class="scroll-list">
+
+            </div>
+
+            <div class="col-lg-3">
+                <h2>Broken Domains:</h2>
+                <hr>
+                <div class="scroll-list scroll-list__broken" id="badDomains">
                     <?php
-                    foreach($brokenArr as $value){
-?>
+                    foreach ($brokenArr as $value) {
+                        
+                        if ($value) : ?>
                         <a href="http://www.<?php echo $value; ?>"><?php echo $value; ?></a><br>
+                        <?php endif ?>
 
-<?php
-}
-                    ?>
-                    </div>
-
-
-                </div>
-
-                <div class="col-lg-3">
-                    <h2>Works Domains:</h2>
-                    <hr>
-                    <div class="scroll-list">
                     <?php
-                    foreach($worksArr as $value){
-
-                        echo $value . '<br>';
-
                     }
                     ?>
-                    </div>
-
                 </div>
+                <button id="button1" onclick="CopyToClipboard('badDomains')">Click to copy</button>
+
+
+            </div>
+
+            <div class="col-lg-3">
+                <h2>Works Domains:</h2>
+                <hr>
+                <div class="scroll-list scroll-list__works" id="goodDomains">
+                    <?php
+                    foreach ($worksArr as $value) {
+
+                        echo $value . '<br>';
+                    }
+                    ?>
+                </div>
+                <button id="button1" onclick="CopyToClipboard('goodDomains')">Click to copy</button>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <?php
 
