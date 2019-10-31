@@ -14,6 +14,16 @@
 
 get_header();
 ?>
+<div class="preloader" id="preloader">
+    <div class="loader">
+        <div class="l_main">
+            <div class="l_square"><span></span><span></span><span></span></div>
+            <div class="l_square"><span></span><span></span><span></span></div>
+            <div class="l_square"><span></span><span></span><span></span></div>
+            <div class="l_square"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</div>
     <section class="main">
         <div class="container">
             <div class="row">
