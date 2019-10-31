@@ -16,12 +16,15 @@ get_header();
 ?>
     <section class="main">
         <div class="container">
+        <form name="form" action="" method="get" class="form">
+                        <input type="text" name="subject" id="subject" placeholder="Enter domains here">
+                        <button class="form-button">Start</button>
+                    </form>
             <div class="row">
                 <div class="col-lg-6">
                     <h2>Domains List:</h2>
-                    <form name="form" action="" method="get">
-                        <input type="text" name="subject" id="subject" value="Car Loan">
-                    </form>
+                    <hr>
+
 
                     <?php
 
@@ -31,8 +34,8 @@ get_header();
                     $arr = explode(" ", $str);
 ?>
 
-
-                    <?php
+<div class="scroll-list">
+<?php
                     $brokenArr = [];
                     $worksArr = [];
 
@@ -58,12 +61,16 @@ get_header();
                     }
 
                     ?>
+</div>
+
 
 
                 </div>
 
                 <div class="col-lg-3">
                     <h2>Broken Domains:</h2>
+                    <hr>
+                    <div class="scroll-list">
                     <?php
                     foreach($brokenArr as $value){
 ?>
@@ -72,11 +79,15 @@ get_header();
 <?php
 }
                     ?>
+                    </div>
+
 
                 </div>
 
                 <div class="col-lg-3">
                     <h2>Works Domains:</h2>
+                    <hr>
+                    <div class="scroll-list">
                     <?php
                     foreach($worksArr as $value){
 
@@ -84,6 +95,8 @@ get_header();
 
                     }
                     ?>
+                    </div>
+
                 </div>
             </div>
         </div>
