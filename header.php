@@ -58,7 +58,9 @@
 	<div id="content" class="site-content">
         <div class="preloader" id="preloader">
             <div class="loader">
+                <h2>You started parsing sites. This process can take a time...<br>Do not reload page.</h2>
                 <div class="l_main">
+
                     <div class="l_square"><span></span><span></span><span></span></div>
                     <div class="l_square"><span></span><span></span><span></span></div>
                     <div class="l_square"><span></span><span></span><span></span></div>

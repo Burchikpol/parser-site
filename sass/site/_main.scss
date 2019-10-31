@@ -50,8 +50,10 @@ body {
     font-size: 20px;
     cursor: pointer;
     border-radius: 0 10px 10px 0;
+    outline: none !important;
     &:hover {
         border-color: #000!important;
+
     }
     
     
